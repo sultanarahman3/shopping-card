@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>count</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/media.css">
+  
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+         <h2>My shopping cart</h2>
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <!-- first item -->
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item product-container" id="product1">
+                        <div class="input-group number-spinner">
+                          <button class="btn btn-default" onclick="decrementQuantity('quantity1', 'price1', 'subtotal', 'tax', 'total')"><i class="fas fa-minus"></i></button>
+                          <input type="number" min="0" class="form-control text-center" id="quantity1" value="1" onchange="updatePrice('quantity1', 'price1', 'subtotal', 'tax', 'total')">
+                          <button class="btn btn-default" onclick="incrementQuantity('quantity1', 'price1', 'subtotal', 'tax', 'total')" ><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5 id="price1" class="productPrice">$100</h5>
+                   <img src="images/remove.png" alt="" onclick="removeProduct('product1', 'subtotal', 'tax', 'total')" class="remove-item">
+                      </div>
+                  </div>
+               </div>
+
+               <!-- 2nd item -->
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item product-container" id="product2">
+                        <div class="input-group number-spinner">
+                          <button class="btn btn-default" onclick="decrementQuantity('quantity2', 'price2', 'subtotal', 'tax', 'total')"><i class="fas fa-minus"></i></button>
+                          <input type="number" min="0" class="form-control text-center" id="quantity2" value="1" onchange="updatePrice('quantity2', 'price2', 'subtotal', 'tax', 'total')">
+                          <button class="btn btn-default" onclick="incrementQuantity('quantity2', 'price2', 'subtotal', 'tax', 'total')" ><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5 id="price2" class="productPrice">$200</h5>
+                        <img src="images/remove.png" alt="" onclick="removeProduct('product2', 'subtotal', 'tax', 'total')" class="remove-item">
+                      </div>
+                  </div>
+               </div>
+              <!-- 3rd item -->
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5 id="subtotal">$0</h5>
+                        <h5 id="tax">$0</h5>
+                        <h5 id="total">$0</h5>
+                     </div>
+                  </div>
+               </div>
+              <!-- 4th item -->
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out" onclick="calculateTotal('subtotal', 'tax', 'total')">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+    <!-- js links -->
+   <script src="js/script.js">
+     
+   </script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
